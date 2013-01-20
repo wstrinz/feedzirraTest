@@ -1,0 +1,2 @@
+module ViewfeedHelper
+end
