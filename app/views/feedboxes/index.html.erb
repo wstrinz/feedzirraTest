@@ -1,0 +1,29 @@
+<h1>Listing feedboxes</h1>
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Url</th>
+    <th>Last update</th>
+    <th>Read index</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @feedboxes.each do |feedbox| %>
+  <tr>
+    <td><%= feedbox.title %></td>
+    <td><%= feedbox.url %></td>
+    <td><%= feedbox.last_update %></td>
+    <td><%= feedbox.read_index %></td>
+    <td><%= link_to 'Show', feedbox %></td>
+    <td><%= link_to 'Edit', edit_feedbox_path(feedbox) %></td>
+    <td><%= link_to 'Destroy', feedbox, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Feedbox', new_feedbox_path %>

@@ -1,4 +1,7 @@
 FeedzirraTest::Application.routes.draw do
+  resources :feedboxes
+
+
   get "viewfeed/refresh"
 
   get "viewfeed/add"
@@ -6,6 +9,12 @@ FeedzirraTest::Application.routes.draw do
   get "viewfeed/all"
 
   get "viewfeed/one"
+
+  match 'feedboxes/:id/refresh' => 'feedboxes#refresh', :as => :refresh_feedbox
+
+  match 'feedboxes/:id/next' => 'feedboxes#next', :as => :next_story
+
+  match 'feedboxes/:id/prev' => 'feedboxes#prev', :as => :prev_story
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
@@ -56,7 +65,7 @@ FeedzirraTest::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  # root :to => 'welcome#index'
+  root :to => 'feedboxes', :action => 'index'
 
   # See how all your routes lay out with "rake routes"
 

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130119150022) do
+ActiveRecord::Schema.define(:version => 20130121172606) do
 
   create_table "feed_locals", :force => true do |t|
     t.string   "feedurl"
@@ -19,6 +19,35 @@ ActiveRecord::Schema.define(:version => 20130119150022) do
     t.integer  "currententry"
     t.datetime "created_at",   :null => false
     t.datetime "updated_at",   :null => false
+  end
+
+  create_table "feedboxes", :force => true do |t|
+    t.string   "title"
+    t.string   "url"
+    t.datetime "last_update"
+    t.integer  "read_index"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
+  create_table "feedcaches", :force => true do |t|
+    t.string   "title"
+    t.string   "url"
+    t.datetime "last_update"
+    t.integer  "read_index"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
+  create_table "stories", :id => false, :force => true do |t|
+    t.string   "title"
+    t.string   "summary"
+    t.string   "url"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+    t.text     "content"
+    t.time     "published"
+    t.integer  "feedbox_id"
   end
 
 end

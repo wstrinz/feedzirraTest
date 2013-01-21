@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  title: RPS
+  url: http://feeds.feedburner.com/RockPaperShotgun
+  last_update: 2013-01-20 18:17:38
+  read_index: 1
+
+two:
+  title: MyString
+  url: MyString
+  last_update: 2013-01-20 18:17:38
+  read_index: 1

@@ -1,0 +1,38 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Feed Title:</b>
+  <%= @feedbox.title %>
+</p>
+
+<p>
+  <b>Url:</b>
+  <%= @feedbox.url %>
+</p>
+
+<p>
+  <b>Last update:</b>
+  <%= @feedbox.last_update %>
+</p>
+
+<p>
+  <b>Read index:</b>
+  <%= @feedbox.read_index %>
+</p>
+
+<p>
+  <b>Story Title</b>
+  <%= @storyt %>
+</p>
+
+<p>
+  <%= @storyc %>
+</p>
+
+
+<%= link_to 'Prev', prev_story_path(@feedbox) %>
+<%= link_to 'Next', next_story_path(@feedbox) %>
+<p></p>
+<%= link_to 'Edit', edit_feedbox_path(@feedbox) %> |
+<%= link_to 'Back', feedboxes_path %> |
+<%= link_to 'Refresh', refresh_feedbox_path(@feedbox) %>
